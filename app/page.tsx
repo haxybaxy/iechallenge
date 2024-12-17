@@ -1,6 +1,16 @@
+'use client'
+import { useState } from 'react'
 import Link from 'next/link'
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const command = 'npx shadcn@latest add "https://v0.dev/chat/b/b_b89zaDkVBjK?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..EQPX-RH7e3-KjMPg.OXOnTSiqxxmBkBnPvZfREUI1ec2i3yCjDdgS36SjyT6Hb8OUf5rjLlDMRt4.azN6b7ylGCmrIdPx2mwkpA"'
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(command)
+    alert('Command copied to clipboard!')
+  }
+
   return (
     <main className="min-h-screen p-8 bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
@@ -70,7 +80,17 @@ export default function Home() {
       {/* Component Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Large Button Example */}
-        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow relative">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+            aria-label="View code"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </button>
           <h2 className="text-2xl font-semibold mb-6 text-gray-800">Large Buttons</h2>
           <button
             className="w-full py-4 px-6 text-xl bg-gradient-to-r from-blue-600 to-blue-700
@@ -83,7 +103,17 @@ export default function Home() {
         </section>
 
         {/* High Contrast Text Example */}
-        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow relative">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+            aria-label="View code"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </button>
           <h2 className="text-2xl font-semibold mb-6 text-gray-800">High Contrast Text</h2>
           <div className="space-y-6">
             <p className="text-xl font-medium text-gray-900 leading-relaxed">
@@ -101,7 +131,17 @@ export default function Home() {
         </section>
 
         {/* Form Controls Example */}
-        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow relative">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+            aria-label="View code"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </button>
           <h2 className="text-2xl font-semibold mb-6 text-gray-800">Form Controls</h2>
           <div className="space-y-4">
             <div>
@@ -124,7 +164,17 @@ export default function Home() {
         </section>
 
         {/* Toggle Switch Example */}
-        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow relative">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+            aria-label="View code"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </button>
           <h2 className="text-2xl font-semibold mb-6 text-gray-800">Large Toggle</h2>
           <label className="relative inline-flex items-center cursor-pointer">
             <input type="checkbox" className="sr-only peer" />
@@ -144,7 +194,17 @@ export default function Home() {
         </section>
 
         {/* Radio Buttons Example */}
-        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow relative">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+            aria-label="View code"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </button>
           <h2 className="text-2xl font-semibold mb-6 text-gray-800">Large Radio Buttons</h2>
           <div className="space-y-5">
             <label className="flex items-center space-x-4 cursor-pointer hover:bg-gray-50 p-2 rounded-xl transition-colors">
@@ -167,7 +227,17 @@ export default function Home() {
         </section>
 
         {/* Dropdown Example */}
-        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow relative">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+            aria-label="View code"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </button>
           <h2 className="text-2xl font-semibold mb-6 text-gray-800">Large Dropdown</h2>
           <select
             className="w-full p-4 text-xl border-2 border-gray-200 rounded-xl
@@ -181,6 +251,54 @@ export default function Home() {
           </select>
         </section>
       </div>
+
+      {/* Code Copy Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-2xl shadow-lg max-w-2xl w-full">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold text-gray-900">Install Component</h2>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="text-gray-500 hover:text-gray-700 p-2"
+                  aria-label="Close modal"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="bg-gray-100 p-4 rounded-xl mb-4 relative">
+                <pre className="text-sm text-gray-800 whitespace-normal break-words">
+                  {command}
+                </pre>
+                <button
+                  onClick={copyToClipboard}
+                  className="absolute top-2 right-2 p-2 text-gray-500 hover:text-gray-700"
+                  aria-label="Copy to clipboard"
+                >
+                  📋
+                </button>
+              </div>
+
+              <div className="flex justify-end">
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-4 py-2 text-gray-600 hover:text-gray-800"
+                >
+                  Close
+                </button>
+                <button
+                  onClick={copyToClipboard}
+                  className="ml-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                >
+                  Copy Command
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
