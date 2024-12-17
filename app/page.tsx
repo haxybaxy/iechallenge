@@ -60,9 +60,9 @@ export default function Home() {
               <input
                 id="example-input"
                 type="text"
-                className="w-full p-4 text-xl border-2 border-gray-200 rounded-xl
+                className="w-full p-4 text-xl border-2 border-gray-300 rounded-xl
                           focus:border-blue-500 focus:ring-2 focus:ring-blue-200
-                          shadow-sm"
+                          shadow-sm placeholder-gray-600 text-gray-900"
                 placeholder="Type here..."
               />
             </div>
@@ -84,7 +84,7 @@ export default function Home() {
                           peer-checked:from-blue-600 peer-checked:to-blue-700">
             </div>
             <span className="ml-4 text-xl font-medium text-gray-900">
-              ON/OFF
+              OFF / ON
             </span>
           </label>
         </section>
@@ -118,13 +118,52 @@ export default function Home() {
           <select
             className="w-full p-4 text-xl border-2 border-gray-200 rounded-xl
                        focus:border-blue-500 focus:ring-2 focus:ring-blue-200
-                       shadow-sm bg-white"
+                       shadow-sm bg-white text-gray-900"
           >
-            <option>Select an option</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-            <option>Option 3</option>
+            <option className="text-gray-900">Select an option</option>
+            <option className="text-gray-900">Option 1</option>
+            <option className="text-gray-900">Option 2</option>
+            <option className="text-gray-900">Option 3</option>
           </select>
+        </section>
+
+        {/* Login Demo Link */}
+        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-800">Login Demo</h2>
+          <Link
+            href="/demos/login"
+            className="block w-full py-4 px-6 text-xl bg-gradient-to-r from-blue-600 to-blue-700
+                      text-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5
+                      transition-all focus:ring-4 focus:ring-blue-300 text-center"
+          >
+            View Login Demo
+          </Link>
+        </section>
+
+        {/* Navigation Demo Link */}
+        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-800">Navigation Demo</h2>
+          <Link
+            href="/demos/navigation"
+            className="block w-full py-4 px-6 text-xl bg-gradient-to-r from-blue-600 to-blue-700
+                      text-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5
+                      transition-all focus:ring-4 focus:ring-blue-300 text-center"
+          >
+            View Navigation Demo
+          </Link>
+        </section>
+
+        {/* Form Demo Link */}
+        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-800">Form Demo</h2>
+          <Link
+            href="/demos/form"
+            className="block w-full py-4 px-6 text-xl bg-gradient-to-r from-blue-600 to-blue-700
+                      text-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5
+                      transition-all focus:ring-4 focus:ring-blue-300 text-center"
+          >
+            View Form Demo
+          </Link>
         </section>
       </div>
     </main>
