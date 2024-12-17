@@ -18,6 +18,7 @@ export default function Home() {
         <h1 className="text-5xl font-bold text-gray-900 mb-6">
           Tech4All
         </h1>
+        <h1 style={{ fontSize: '10rem' }}>👴🏻👵🏻</h1>
         <h1 className="text-4xl font-bold text-blue-700 mb-6">
           Senior-Friendly UI Components
         </h1>
