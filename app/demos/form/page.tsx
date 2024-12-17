@@ -50,7 +50,7 @@ export default function FormDemo() {
 
   return (
     <div className="min-h-screen p-8 bg-gradient-to-b from-blue-50 to-white">
-      <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+      <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg mb-48">
         <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
           Personal Information Form
         </h1>
