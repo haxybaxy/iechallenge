@@ -18,7 +18,7 @@ export default function NavigationDemo() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white relative">
       {/* Top Navigation Bar */}
       <nav className="bg-white shadow-lg p-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -81,7 +81,8 @@ export default function NavigationDemo() {
         {/* Sidebar Toggle Button */}
         <button
           className="fixed bottom-8 right-8 lg:hidden bg-blue-600 text-white p-4 rounded-full shadow-lg
-                     hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
+                     hover:bg-blue-700 focus:ring-4 focus:ring-blue-300
+                     sm:right-8 right-4 sm:bottom-8 bottom-4 z-40"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           aria-label={isSidebarOpen ? 'Close sidebar' : 'Open sidebar'}
         >
@@ -93,7 +94,8 @@ export default function NavigationDemo() {
           className={`${
             isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
           } lg:translate-x-0 transition-transform duration-300 fixed lg:static
-          left-0 top-0 h-full lg:h-auto w-64 bg-white shadow-lg lg:mr-8 z-10`}
+          left-0 top-0 h-full lg:h-auto w-64 bg-white shadow-lg lg:mr-8 z-30
+          lg:block ${isSidebarOpen ? 'block' : 'hidden'}`}
         >
           <div className="p-6 space-y-6">
             <h2 className="text-2xl font-semibold text-gray-900 mb-8">Quick Links</h2>
@@ -104,7 +106,12 @@ export default function NavigationDemo() {
                           ${activeTab === item.id
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-700 hover:bg-gray-100'}`}
-                onClick={() => setActiveTab(item.id)}
+                onClick={() => {
+                  setActiveTab(item.id)
+                  if (window.innerWidth < 1024) { // Close sidebar on mobile after selection
+                    setIsSidebarOpen(false)
+                  }
+                }}
               >
                 <span className="mr-3">{item.icon}</span>
                 {item.label}
@@ -112,6 +119,15 @@ export default function NavigationDemo() {
             ))}
           </div>
         </aside>
+
+        {/* Overlay for mobile when sidebar is open */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 lg:hidden z-20"
+            onClick={() => setIsSidebarOpen(false)}
+            aria-label="Close sidebar"
+          />
+        )}
 
         {/* Main Content */}
         <main className="flex-1 bg-white rounded-2xl shadow-lg p-8">
@@ -164,7 +180,9 @@ export default function NavigationDemo() {
       <button
         onClick={() => setIsModalOpen(true)}
         className="fixed bottom-8 left-8 bg-blue-600 text-white text-xl px-6 py-4 rounded-xl shadow-lg
-                   hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition-all"
+                   hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition-all
+                   sm:left-8 left-4 sm:bottom-8 bottom-4 z-40
+                   sm:text-xl text-lg sm:px-6 px-4 sm:py-4 py-3"
       >
         Contact Us 📧
       </button>
@@ -172,10 +190,10 @@ export default function NavigationDemo() {
       {/* Feedback Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-2xl shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-8">
+          <div className="bg-white rounded-2xl shadow-lg w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
+            <div className="p-8 sm:p-8 p-4">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-3xl font-bold text-gray-900">Contact Us</h2>
+                <h2 className="text-3xl font-bold text-gray-900 sm:text-3xl text-2xl">Contact Us</h2>
                 <button
                   onClick={() => setIsModalOpen(false)}
                   className="text-2xl text-gray-500 hover:text-gray-700 p-2"
@@ -202,7 +220,7 @@ export default function NavigationDemo() {
                     id="name"
                     type="text"
                     required
-                    className="w-full p-4 text-xl border-2 border-gray-300 rounded-xl
+                    className="w-full p-4 sm:p-4 p-3 text-xl sm:text-xl text-lg border-2 border-gray-300 rounded-xl
                               focus:border-blue-500 focus:ring-2 focus:ring-blue-200
                               shadow-sm text-gray-900"
                     placeholder="Enter your name"
@@ -217,7 +235,7 @@ export default function NavigationDemo() {
                     id="email"
                     type="email"
                     required
-                    className="w-full p-4 text-xl border-2 border-gray-300 rounded-xl
+                    className="w-full p-4 sm:p-4 p-3 text-xl sm:text-xl text-lg border-2 border-gray-300 rounded-xl
                               focus:border-blue-500 focus:ring-2 focus:ring-blue-200
                               shadow-sm text-gray-900"
                     placeholder="Enter your email"
@@ -234,7 +252,7 @@ export default function NavigationDemo() {
                     rows={4}
                     value={feedback}
                     onChange={(e) => setFeedback(e.target.value)}
-                    className="w-full p-4 text-xl border-2 border-gray-300 rounded-xl
+                    className="w-full p-4 sm:p-4 p-3 text-xl sm:text-xl text-lg border-2 border-gray-300 rounded-xl
                               focus:border-blue-500 focus:ring-2 focus:ring-blue-200
                               shadow-sm text-gray-900"
                     placeholder="How can we help you?"
@@ -243,7 +261,8 @@ export default function NavigationDemo() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 text-xl bg-gradient-to-r from-blue-600 to-blue-700
+                  className="w-full py-4 sm:py-4 py-3 px-6 text-xl sm:text-xl text-lg
+                           bg-gradient-to-r from-blue-600 to-blue-700
                            text-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5
                            transition-all focus:ring-4 focus:ring-blue-300"
                 >
