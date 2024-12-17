@@ -6,11 +6,65 @@ export default function Home() {
       {/* Header */}
       <header className="max-w-4xl mx-auto mb-16 text-center">
         <h1 className="text-5xl font-bold text-gray-900 mb-6">
+          Tech4All
+        </h1>
+        <h1 className="text-4xl font-bold text-blue-700 mb-6">
           Senior-Friendly UI Components
         </h1>
-        <p className="text-2xl text-gray-700 max-w-2xl mx-auto">
+        <p className="text-2xl text-gray-700 max-w-2xl mx-auto mb-12">
           Easy-to-use, accessible components crafted with clarity and simplicity in mind
         </p>
+
+        {/* Demo Links Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-16">
+          <Link
+            href="/demos/login"
+            className="group relative bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl
+                     transition-all border-2 border-transparent hover:border-blue-500
+                     flex flex-col min-h-[280px]"
+          >
+            <div>
+              <div className="text-4xl mb-4">🔐</div>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-2">Login Demo</h2>
+              <p className="text-gray-600">Experience our senior-friendly authentication flow</p>
+            </div>
+            <span className="text-blue-600 group-hover:text-blue-700 font-semibold mt-auto pt-4">
+              Try Demo →
+            </span>
+          </Link>
+
+          <Link
+            href="/demos/navigation"
+            className="group relative bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl
+                     transition-all border-2 border-transparent hover:border-blue-500
+                     flex flex-col min-h-[280px]"
+          >
+            <div>
+              <div className="text-4xl mb-4">🧭</div>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-2">Navigation Demo</h2>
+              <p className="text-gray-600">See our accessible navigation patterns in action</p>
+            </div>
+            <span className="text-blue-600 group-hover:text-blue-700 font-semibold mt-auto pt-4">
+              Try Demo →
+            </span>
+          </Link>
+
+          <Link
+            href="/demos/form"
+            className="group relative bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl
+                     transition-all border-2 border-transparent hover:border-blue-500
+                     flex flex-col min-h-[280px]"
+          >
+            <div>
+              <div className="text-4xl mb-4">📝</div>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-2">Form Demo</h2>
+              <p className="text-gray-600">Explore our easy-to-use form components</p>
+            </div>
+            <span className="text-blue-600 group-hover:text-blue-700 font-semibold mt-auto pt-4">
+              Try Demo →
+            </span>
+          </Link>
+        </div>
       </header>
 
       {/* Component Grid */}
@@ -125,45 +179,6 @@ export default function Home() {
             <option className="text-gray-900">Option 2</option>
             <option className="text-gray-900">Option 3</option>
           </select>
-        </section>
-
-        {/* Login Demo Link */}
-        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-          <h2 className="text-2xl font-semibold mb-6 text-gray-800">Login Demo</h2>
-          <Link
-            href="/demos/login"
-            className="block w-full py-4 px-6 text-xl bg-gradient-to-r from-blue-600 to-blue-700
-                      text-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5
-                      transition-all focus:ring-4 focus:ring-blue-300 text-center"
-          >
-            View Login Demo
-          </Link>
-        </section>
-
-        {/* Navigation Demo Link */}
-        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-          <h2 className="text-2xl font-semibold mb-6 text-gray-800">Navigation Demo</h2>
-          <Link
-            href="/demos/navigation"
-            className="block w-full py-4 px-6 text-xl bg-gradient-to-r from-blue-600 to-blue-700
-                      text-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5
-                      transition-all focus:ring-4 focus:ring-blue-300 text-center"
-          >
-            View Navigation Demo
-          </Link>
-        </section>
-
-        {/* Form Demo Link */}
-        <section className="p-8 bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-          <h2 className="text-2xl font-semibold mb-6 text-gray-800">Form Demo</h2>
-          <Link
-            href="/demos/form"
-            className="block w-full py-4 px-6 text-xl bg-gradient-to-r from-blue-600 to-blue-700
-                      text-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5
-                      transition-all focus:ring-4 focus:ring-blue-300 text-center"
-          >
-            View Form Demo
-          </Link>
         </section>
       </div>
     </main>
