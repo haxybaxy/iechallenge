@@ -25,7 +25,7 @@ export default function LoginDemo() {
           </p>
           <div className="space-y-6">
             <label className="block text-xl font-medium text-gray-900">
-              How was your experience? We'd love your feedback:
+              How was your experience? We would love your feedback:
               <textarea
                 className="mt-4 w-full p-4 text-xl border-2 border-gray-300 rounded-xl
                           focus:border-blue-500 focus:ring-2 focus:ring-blue-200
