@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -14,10 +15,8 @@ export default function Home() {
   return (
     <main className="min-h-screen p-8 bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
-      <header className="max-w-4xl mx-auto mb-16 text-center">
-        <h1 className="text-5xl font-bold text-gray-900 mb-6">
-          Tech4All
-        </h1>
+      <header className="max-w-4xl mx-auto mb-16 text-center flex flex-col items-center">
+        <Image src="/techlogo.png" className="align-center" alt="Tech4All" width={400} height={400} />
         <h1 style={{ fontSize: '10rem' }}>👴🏻👵🏻</h1>
         <h1 className="text-4xl font-bold text-blue-700 mb-6">
           Senior-Friendly UI Components
